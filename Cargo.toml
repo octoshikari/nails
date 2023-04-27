@@ -1,0 +1,50 @@
+[package]
+name = "nails"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+members = [
+    "metrics",
+    "migration",
+    "shutdown"
+]
+
+
+[dependencies]
+metrics =  {path = "./metrics"}
+migration = { path = "./migration" }
+shutdown = {path = "./shutdown"}
+axum = { version = "0.6", features = ["macros", "headers"] }
+tokio = { version = "1.0", features = ["full"] }
+tower = { version = "0.4", features = ["util"] }
+tower-http = { version = "0.4.0", features = ["trace","fs"] }
+tower-cookies = "0.9"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+axum-macros = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
+dotenvy = "0.15"
+http = "0.2.9"
+headers = "0.3"
+jsonwebtoken = "8"
+uuid = { version = "1", features = ["v4", "fast-rng", ] }
+lazy-regex = "2.5.0"
+tera = "1"
+sea-orm = { version = "0.11.2", features = ["sqlx-postgres", "runtime-tokio-rustls","with-uuid"] }
+
+
+
+[dev-dependencies]
+anyhow = "1"
+httpc-test = "0.1.1"
+
+
+[profile.release]
+strip = true
+lto = true
+opt-level = "z"
+codegen-units = 1

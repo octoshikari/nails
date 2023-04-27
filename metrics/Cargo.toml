@@ -1,0 +1,11 @@
+[package]
+name = "metrics"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shutdown = { path = "../shutdown" }
+metrics = "0.21"
+metrics-exporter-prometheus = "0.12"
+axum = "0.6"
+tracing = "0.1"

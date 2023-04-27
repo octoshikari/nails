@@ -19,6 +19,7 @@
     "rules": {
         "solid/reactivity": "warn",
         "solid/no-destructure": "warn",
-        "solid/jsx-no-undef": "error"
+        "solid/jsx-no-undef": "error",
+        "@typescript-eslint/promise-function-async": "off"
     }
 }

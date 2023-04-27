@@ -23,11 +23,11 @@ export const LoginPage = () => {
       </Show>
         <FormControl>
             <FormLabel for="email">Email</FormLabel>
-            <Input id="email" type="email"/>
+            <Input id="email" type="email" value={form().email} onInput={(e) => handle({key: "email", value: e.currentTarget.value}) }/>
         </FormControl>
         <FormControl>
             <FormLabel for="password">Password</FormLabel>
-            <Input id="password" type="password"/>
+            <Input id="password" type="password" value={form().password} onInput={(e) => handle({key: "password", value: e.currentTarget.value}) }/>
         </FormControl>
         <Button marginTop="10px" onClick={() => process()} colorScheme="success">Войти</Button>
     </div>
